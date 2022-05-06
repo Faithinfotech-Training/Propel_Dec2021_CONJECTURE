@@ -8,6 +8,7 @@ public class PropelDec2021ConjectureApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(PropelDec2021ConjectureApplication.class, args);
+		System.out.println("Akash");
 	}
 
 }
