@@ -58,5 +58,12 @@ public class LabTestPrescribed {
 		this.consultation = consultation;
 	}
 
+	// to string
+	@Override
+	public String toString() {
+		return "LabTestPrescribed [labPresID=" + labPresID + ", labtest=" + labtest + ", consultation=" + consultation
+				+ "]";
+	}
+
 	
 }
