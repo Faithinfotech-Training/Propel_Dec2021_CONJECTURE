@@ -69,6 +69,13 @@ public class Doctor {
 	public void setSpecialization(Specialization specialization) {
 		this.specialization = specialization;
 	}
+
+	// to string
+	@Override
+	public String toString() {
+		return "Doctor [doctorID=" + doctorID + ", staff=" + staff + ", departments=" + departments
+				+ ", specialization=" + specialization + "]";
+	}
 	
 	
 	
