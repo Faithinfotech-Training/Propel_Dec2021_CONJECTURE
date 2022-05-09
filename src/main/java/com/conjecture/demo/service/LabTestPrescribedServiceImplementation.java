@@ -34,4 +34,9 @@ public class LabTestPrescribedServiceImplementation implements ILabTestPrescribe
 		labTestPrescribedRepo.deleteById(theId);
 	}
 
+	@Override
+	public List<LabTestPrescribed> getTestPrescribedByConsultID(int theId) {
+		return (List<LabTestPrescribed>) labTestPrescribedRepo.testPrescribedByConsultId(theId);
+	}
+
 }

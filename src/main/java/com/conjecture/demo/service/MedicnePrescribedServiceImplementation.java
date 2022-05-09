@@ -35,5 +35,10 @@ public class MedicnePrescribedServiceImplementation implements IMedicnePrescribe
 		medicinePrescribedRepo.deleteById(theId);
 
 	}
+	
+	@Override
+	public List<MedicnePrescribed> getMedicnePrescribedByConsultID(int theId) {
+		return (List<MedicnePrescribed>) medicinePrescribedRepo.medPrescribedByConsultId(theId);
+	}
 
 }

@@ -9,8 +9,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-
 
 @Entity
 @Table(name="doctor")
@@ -68,13 +66,6 @@ public class Doctor {
 
 	public void setSpecialization(Specialization specialization) {
 		this.specialization = specialization;
-	}
-
-	// to string
-	@Override
-	public String toString() {
-		return "Doctor [doctorID=" + doctorID + ", staff=" + staff + ", departments=" + departments
-				+ ", specialization=" + specialization + "]";
 	}
 	
 	

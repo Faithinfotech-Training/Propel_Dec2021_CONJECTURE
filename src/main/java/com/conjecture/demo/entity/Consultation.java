@@ -24,8 +24,9 @@ public class Consultation {
 	@Column(name="consultationID")
 	private int consultationID;
 
+	private int appointmentID;
 	@OneToOne
-	@JoinColumn(name="appointmentID")
+	@JoinColumn(name="appointmentID", insertable=false,updatable=false)
 	private Appointment appointment;
 	
 	@OneToMany(mappedBy="consultation")
@@ -92,6 +93,14 @@ public class Consultation {
 
 	public void setDiagonosis(String diagonosis) {
 		this.diagonosis = diagonosis;
+	}
+
+	public int getAppointmentID() {
+		return appointmentID;
+	}
+
+	public void setAppointmentID(int appointmentID) {
+		this.appointmentID = appointmentID;
 	}
 
 	

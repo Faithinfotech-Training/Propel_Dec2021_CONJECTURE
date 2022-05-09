@@ -20,8 +20,9 @@ public class Notes {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer notesID;
 	
+	private Integer consultationID;
 	@ManyToOne
-	@JoinColumn(name="consultationID")
+	@JoinColumn(name="consultationID", insertable=false,updatable=false)
 	private Consultation consultation;
 	
 	private String notes;
@@ -65,6 +66,15 @@ public class Notes {
 	public void setCreatedOn(LocalDate createdOn) {
 		this.createdOn = createdOn;
 	}
+
+	public Integer getConsultationID() {
+		return consultationID;
+	}
+
+	public void setConsultationID(Integer consultationID) {
+		this.consultationID = consultationID;
+	}
+	
 	
 	
 	

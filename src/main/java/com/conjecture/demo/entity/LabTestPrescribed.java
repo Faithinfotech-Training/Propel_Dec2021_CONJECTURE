@@ -19,12 +19,15 @@ public class LabTestPrescribed {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer labPresID;
 	
+	private Integer testID;
 	@OneToOne
-	@JoinColumn(name="testID")
+	@JoinColumn(name="testID", insertable=false,updatable=false)
 	private Labtest labtest;
 	
+	private Integer consultationID;
+	
 	@ManyToOne
-	@JoinColumn(name="consultationID")
+	@JoinColumn(name="consultationID", insertable=false,updatable=false)
 	private Consultation consultation;
 
 	//default constructor
@@ -58,11 +61,20 @@ public class LabTestPrescribed {
 		this.consultation = consultation;
 	}
 
-	// to string
-	@Override
-	public String toString() {
-		return "LabTestPrescribed [labPresID=" + labPresID + ", labtest=" + labtest + ", consultation=" + consultation
-				+ "]";
+	public Integer getTestID() {
+		return testID;
+	}
+
+	public void setTestID(Integer testID) {
+		this.testID = testID;
+	}
+
+	public Integer getConsultationID() {
+		return consultationID;
+	}
+
+	public void setConsultationID(Integer consultationID) {
+		this.consultationID = consultationID;
 	}
 
 	
