@@ -3,7 +3,7 @@ package com.conjecture.demo.service;
 import java.util.List;
 import java.util.Optional;
 
-import com.conjecture.demo.entity.LabTestPrescribed;
+import com.conjecture.demo.entity.LabTestPrescribed;;
 
 public interface ILabTestPrescribedService {
 	
@@ -18,5 +18,7 @@ public interface ILabTestPrescribedService {
 	
 	//Delete
 	public void deleteLabTestPrescribed(int theId);
+	
+	public List<LabTestPrescribed> getTestPrescribedByConsultID(int theId);
 
 }

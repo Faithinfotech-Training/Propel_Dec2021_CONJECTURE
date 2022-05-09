@@ -10,6 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name="appointment")
 public class Appointment {
@@ -20,14 +21,16 @@ public class Appointment {
 	private int appointmentID;
 	private String tokenNumber;
 	
+	private Integer doctorID;
 	//ForeignKey
 	@ManyToOne
-	@JoinColumn(name="doctorID")
+	@JoinColumn(name="doctorID", insertable=false,updatable=false)
 	private Doctor doctor;
 	
+	private Integer patientID;
 	//ForeignKey
 	@ManyToOne
-	@JoinColumn(name="patientID")
+	@JoinColumn(name="patientID", insertable=false,updatable=false)
 	private Patient patient;
 	
 	private LocalDate DateOfAppointment;
@@ -54,6 +57,7 @@ public class Appointment {
 		this.tokenNumber = tokenNumber;
 	}
 
+//	@JsonBackReference
 	public Doctor getDoctor() {
 		return doctor;
 	}
@@ -92,6 +96,22 @@ public class Appointment {
 
 	public void setCreatedOn(LocalDate createdOn) {
 		CreatedOn = createdOn;
+	}
+
+	public Integer getDoctorID() {
+		return doctorID;
+	}
+
+	public void setDoctorID(Integer doctorID) {
+		this.doctorID = doctorID;
+	}
+
+	public Integer getPatientID() {
+		return patientID;
+	}
+
+	public void setPatientID(Integer patientID) {
+		this.patientID = patientID;
 	}
 	
 	

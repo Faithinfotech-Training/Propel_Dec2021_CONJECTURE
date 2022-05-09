@@ -26,7 +26,7 @@ public class MedicnePrescribedRestController {
 	private IMedicnePrescribedService medicnePrescribedService;
 	
 	//get all medicnePrescribeds
-	@GetMapping("/medicnePrescribeds")
+	@GetMapping("/medpres")
 	public List<MedicnePrescribed> getAllMedicnePrescribeds(){
 		
 		return medicnePrescribedService.getMedicnePrescribeds();
@@ -59,5 +59,14 @@ public class MedicnePrescribedRestController {
 	public void deleteMedicnePrescribed(@PathVariable int theId) {
 		medicnePrescribedService.deleteMedicnePrescribed(theId);
 	}
+	
+	//get medicines prescribed by consultation ID
+	@GetMapping("/medpres/meds/{theId}")
+	public List<MedicnePrescribed> getMedicnePrescribedbyConsulID(@PathVariable int theId) {
+				
+		return medicnePrescribedService.getMedicnePrescribedByConsultID(theId);
+				
+	}
+	
 
 }

@@ -19,12 +19,14 @@ public class MedicnePrescribed {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer medPresID;
 	
+	private Integer medicineID;
 	@OneToOne
-	@JoinColumn(name="medicineID")
+	@JoinColumn(name="medicineID" ,insertable=false,updatable=false)
 	private Medicine medicine;
 	
+	private Integer consultationID;
 	@ManyToOne
-	@JoinColumn(name="consultationID")
+	@JoinColumn(name="consultationID", insertable=false,updatable=false)
 	private Consultation consultation;
 	
 	private String medinterval;
@@ -75,6 +77,39 @@ public class MedicnePrescribed {
 
 	public void setDosage(String dosage) {
 		this.dosage = dosage;
+	}
+	
+
+	public Integer getMedPresID() {
+		return medPresID;
+	}
+
+	public void setMedPresID(Integer medPresID) {
+		this.medPresID = medPresID;
+	}
+
+	public Integer getMedicineID() {
+		return medicineID;
+	}
+
+	public void setMedicineID(Integer medicineID) {
+		this.medicineID = medicineID;
+	}
+
+	public Integer getConsultationID() {
+		return consultationID;
+	}
+
+	public void setConsultationID(Integer consultationID) {
+		this.consultationID = consultationID;
+	}
+
+	public String getMedinterval() {
+		return medinterval;
+	}
+
+	public void setMedinterval(String medinterval) {
+		this.medinterval = medinterval;
 	}
 
 	//to String 

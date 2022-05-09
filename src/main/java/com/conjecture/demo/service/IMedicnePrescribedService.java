@@ -19,4 +19,6 @@ public interface IMedicnePrescribedService {
 	//Delete
 	public void deleteMedicnePrescribed(int theId);
 
+	public List<MedicnePrescribed> getMedicnePrescribedByConsultID(int theId);
+	
 }

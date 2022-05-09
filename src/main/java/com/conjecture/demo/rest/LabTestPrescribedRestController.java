@@ -60,5 +60,14 @@ public class LabTestPrescribedRestController {
 	public void deleteLabTestPrescribed(@PathVariable int theId) {
 		labTestPrescribedService.deleteLabTestPrescribed(theId);
 	}
+	
+	//get tests prescribed by consultation ID
+	//Get Employee By Id
+	@GetMapping("/labpres/tests/{theId}")
+	public List<LabTestPrescribed> getMedicnePrescribedbyConsulID(@PathVariable int theId) {
+				
+		return labTestPrescribedService.getTestPrescribedByConsultID(theId);
+				
+	}
 
 }
